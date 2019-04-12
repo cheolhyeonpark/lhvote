@@ -1,0 +1,54 @@
+main .contents {
+    margin-top: 20px;
+    text-align: left;
+}
+
+main .contents .contTitle {
+    font-size: 18px;
+}
+
+main .contents .txtbox {
+    width: 1120px;
+    height: 400px;
+    padding-left: 20px;
+    padding-right: 10px;
+    border: 1px solid lightgray;
+    line-height: 28px;
+    overflow: auto;
+}
+
+main .contents .txtbox .txtCont {
+    font-size: 14px;
+}
+
+main .contents .checkboxWrap {
+    margin-top: 18px;
+}
+
+main .contents .check {
+    float: left;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #bcbcbc;
+    cursor: pointer;
+}
+
+main .contents .checkboxdesc {
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.margintop50px {
+    margin-top: 50px;
+}
+
+main .nextBtnWrap {
+    margin-top: 60px;
+    text-align: right;
+}
+
+main .nextBtnWrap {
+    margin-right: 8px;
+}

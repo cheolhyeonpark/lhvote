@@ -1,0 +1,58 @@
+main .contentBox {
+    display: inline-block;
+    width: 700px;
+    padding: 20px 70px;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    text-align: center;
+}
+
+main table {
+    text-align: left;
+    width: 100%;
+}
+
+main table th {
+    font-weight: normal;
+}
+
+main table td {
+    padding-left: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+main table td input {
+    border: 1px solid lightgray;
+    height: 26px;
+    width: 100px;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'Nanum Gothic', sans-serif;
+    border: 1px solid lightgray;
+}
+
+main table td select {
+    height: 29px;
+    border: 1px solid lightgray;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+main table td .formBtn {
+    background-color: white;
+    border: 1px solid lightgray;
+    color: black;
+    height: 31px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    font-family: 'Nanum Gothic', sans-serif;
+    cursor: pointer;
+}
+
+main .nextBtnWrap {
+    margin-top: 30px;
+    margin-bottom: 200px;
+}

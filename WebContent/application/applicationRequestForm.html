@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>아파트 e투표</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/applicationRequestForm.css">
+</head>
+
+<body>
+    <nav>
+        <div class="menuWrap limitWidth">
+            <div class="logo"><a href="#"></a></div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        서비스 소개
+                    </li>
+                    <li>
+                        이용방법
+                    </li>
+                    <li>
+                        이용신청
+                    </li>
+                    <li>
+                        고객센터
+                    </li>
+                </ul>
+                <div class="dropDownMenuWrap">
+                    <div class="dropDownMenu">
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>
+                                        서비스 안내
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        이용 절차
+                                    </li>
+                                    <li>
+                                        이용수수료
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <a href="/application/applicationApplyPolicy.html">이용신청서 작성</a>
+                                    </li>
+                                    <li>
+                                        <a href="/application/applicationRequestForm.html">이용신청서 조회(수정)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        공지사항
+                                    </li>
+                                    <li>
+                                        자료실
+                                    </li>
+                                    <li>
+                                        질문과 답변
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="loginIconWrap">
+                <div class="loginIcon"></div>
+            </div>
+        </div>
+        <div class="navbg">
+            <div class="limitWidth verticalCenter">
+                <div class="navTxt">
+                    <div class="verticalCenter">
+                        <h2>이용신청서 조회</h2>
+                        <p style="font-size: 13px;">
+                            신청하셨던 이용신청서의 내용을 수정 또는 인쇄하시려면, 아래의 관리자 정보로 인증하시기 바랍니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="navImg"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="limitWidth">
+            <div class="contents">
+                <form id="form" action="./list" method="POST">
+                    <div class="contentBox">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        이름
+                                    </th>
+                                    <td errmsg="이름을 입력해 주세요">
+                                        <input class="necessary" type="text" name="manName" id="manName" style="width: 150px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        휴대전화 번호
+                                    </th>
+                                    <td id="phone" errmsg="관리자 연락처(무선)을 입력해 주세요">
+                                        <select class="necessary" name="phone1" id="phone1">
+                                            <option value="010">010</option>
+                                            <option value="011">011</option>
+                                            <option value="016">016</option>
+                                            <option value="017">017</option>
+                                            <option value="018">018</option>
+                                            <option value="019">019</option>
+                                            <option value="0505">0505</option>
+                                        </select> -
+                                        <input class="necessary" type="tel" name="phone2" id="phone2"> -
+                                        <input class="necessary" type="tel" name="phone3" id="phone3">
+                                        <button type="button" class="formBtn" id="certBtn">인증번호 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        인증번호 입력
+                                    </th>
+                                    <td errmsg="인증번호를 입력해 주세요">
+                                        <input class="necessary" type="text" name="certCode" id="certCode" style="width: 150px;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="nextBtnWrap">
+                        <button type="button" class="nextBtn normBtn" id="viewBtn">조회하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <hr>
+        <div class="limitWidth">
+            <div class="contents">
+                <div class="footerLogo"><img src="images/f_logo.png" alt="중앙공동주택관리지원센터"></div>
+                <div class="footerTxt">
+                    <div class="policyLink">
+                        <a href="#">이용에 관한 확인사항</a> &nbsp&nbsp&nbsp&nbsp <a href="#">개인정보처리(취급)방침</a>
+                    </div>
+                    <div class="copyright">
+                        경기도 성남시 분당구 성남대로 54번길3(구미동 175) / 문의전화 : 1600-7004 /<br>
+                        Copyright ⓒ Korea Land and Housing Corporation All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/applicationRequestForm.js"></script>
+</body>
+
+</html>

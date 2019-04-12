@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>아파트 e투표</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/applicationForm.css">
+<link rel="stylesheet" href="css/qnaBoardList.css">
+</head>
+
+<body>
+	<nav>
+		<div class="menuWrap limitWidth">
+			<div class="logo">
+				<a href="#"></a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li>서비스 소개</li>
+					<li>이용방법</li>
+					<li>이용신청</li>
+					<li>고객센터</li>
+				</ul>
+				<div class="dropDownMenuWrap">
+					<div class="dropDownMenu">
+						<ul>
+							<li>
+								<ul>
+									<li>서비스 안내</li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li>이용 절차</li>
+									<li>이용수수료</li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li><a href="/kvoting/application/add">이용신청서 작성</a></li>
+									<li><a href="/kvoting/application/list">이용신청서 조회(수정)</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li>공지사항</li>
+									<li>자료실</li>
+									<li><a href="/kvoting/qnaBoard/add">질문과 답변</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="loginIconWrap">
+				<div class="loginIcon"></div>
+			</div>
+		</div>
+		<div class="navbg">
+			<div class="limitWidth verticalCenter">
+				<div class="navTxt">
+					<div class="verticalCenter">
+						<h2>질문과 답변</h2>
+						<p style="font-size: 13px;">아파트 e투표에 궁금한 점을 등록하시면 담당자가 친절히
+							답변해드리도록 하겠습니다.</p>
+					</div>
+				</div>
+				<div class="navImg"></div>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+	<div class="limitWidth">
+		<div class="contents">
+			<div id="answerModal" class="modal">
+				<div class="modal-content">
+					<div class="modalNav">
+						<div class="modalTitle">답변 등록하기</div>
+						<div class="close" id="answerClose">&#215;</div>
+					</div>
+					<div class="writeTable">
+						<table>
+							<tbody>
+								<tr>
+									<th>답변내용</th>
+									<td class="inputTd"><textarea name="qnaAnswer"
+											id="qnaAnswer" rows="10" cols="80"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<button type="button" class="nextBtn normBtn" id="answerWriteBtn">등
+							록</button>
+					</div>
+				</div>
+			</div>
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<div class="modalNav">
+						<div class="modalTitle">질문 등록하기</div>
+						<div class="close" id="modalclose">&#215;</div>
+					</div>
+					<div class="writeTable">
+						<table>
+							<tbody>
+								<tr>
+									<th>질문제목</th>
+									<td class="inputTd"><input type="text" name="qnaTitle"
+										id="qnaTitle" style="width: 96%"></td>
+								</tr>
+								<tr>
+									<th>비밀번호</th>
+									<td class="inputTd leftTd"><input type="password"
+										name="qnaPassword" id="qnaPassword" style="width: 25%">
+										<span style="color: tomato">&nbsp&nbsp비밀번호를 설정하시면 비공개
+											질문으로 등록하실 수 있습니다</span></td>
+								</tr>
+								<tr>
+									<th>비밀번호 확인</th>
+									<td class="inputTd leftTd"><input type="password"
+										name="qnaPasswordAgain" id="qnaPasswordAgain"
+										style="width: 25%"></td>
+								</tr>
+								<tr>
+									<th>보안문자</th>
+									<td class="inputTd leftTd">
+										<div style="display: block; height: 50px; width: 100%">
+											<img id="captchaImg" name="captchaImg" src="/kvoting/captcha"
+												alt="Captcha Image" height="45" style="float: left;" /> <input
+												type="text" name="secureCode" id="secureCode"
+												style="width: 25%; float: left; margin-left: 20px; margin-top: 5px;">
+										</div>
+										<div style="display: block; margin-top: 5px; width: 100%">
+											<button class="formBtn" onclick="refreshSecureCode()">새로고침</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>질문내용</th>
+									<td class="inputTd"><textarea name="qnaQuestion"
+											id="qnaQuestion" rows="10" cols="80"></textarea></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<button type="button" class="nextBtn normBtn" id="writeBtn">등
+							록</button>
+					</div>
+				</div>
+			</div>
+			<div class="qnaTitle" id="myBtn">
+				<div class="qnaTitleImg">
+					<img alt="" src="images/qnaImg.PNG">
+				</div>
+				<div class="qnaTitleText">질문 등록하기</div>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>제목</th>
+						<th>등록일</th>
+						<th>공개여부</th>
+					</tr>
+				</thead>
+				<tbody id="qnaListTable">
+				</tbody>
+			</table>
+			<div class="pageIndex" id="pageIndexDiv"></div>
+		</div>
+	</div>
+
+	</main>
+
+	<footer>
+		<hr>
+		<div class="limitWidth">
+			<div class="contents">
+				<div class="footerLogo">
+					<img src="images/f_logo.png" alt="중앙공동주택관리지원센터">
+				</div>
+				<div class="footerTxt">
+					<div class="policyLink">
+						<a href="#">이용에 관한 확인사항</a> &nbsp&nbsp&nbsp&nbsp <a href="#">개인정보처리(취급)방침</a>
+					</div>
+					<div class="copyright">
+						경기도 성남시 분당구 성남대로 54번길3(구미동 175) / 문의전화 : 1600-7004 /<br>
+						Copyright ⓒ Korea Land and Housing Corporation All Right Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="ckeditor/ckeditor.js"></script>
+	<script src="js/qnaBoardList.js"></script>
+</body>
+
+</html>
